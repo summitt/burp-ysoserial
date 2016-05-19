@@ -2,9 +2,9 @@
 
 Download the jar file here: [ysoserial.jar](https://github.com/summitt/burp-ysoserial/releases)
 
-There are 3 ways to run this extension. 
+There are 3 ways to run this [Burp](https://portswigger.net/) extension. 
 
- 1. Generate a payload from the YSOSERIAL Tab. You can then copy and paste it into other tabs in burp.(Not ideal)
+ 1. Generate a payload from the YSOSERIAL Tab. You can then copy and paste it into other tabs in [Burp](https://portswigger.net/).(Not ideal)
  1. Generate a payload from the YSOSERIAL Tab. In another tab you can select the text you want to replace and right click. You have 3 options to replace.
    1. Raw - This will replace your selected text with an unencoded version of the payload. This is raw binary/hex.
    1. B64 - This payload will replace your selected text with a base64 encoded version.
@@ -46,7 +46,7 @@ The above code will be split into a string array that java can run on the victim
 ![Payload Generator](/replace%20with%20generated.png)
 
 ### Example 2 - Use and inline command
-1. In Burp Repeater replace your parameter with the following code:
+1. In [Burp](https://portswigger.net/) Repeater replace your parameter with the following code:
 
 ```$(CC1|ping -c1 8.8.8.8)```
 
