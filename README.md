@@ -15,7 +15,7 @@ There are 3 ways to run this [Burp](https://portswigger.net/) extension.
  
  Select the above text and right click any of the Java Serialized Payload Options and it will replace your command with a payload containing that command.
  
- The first parameter before the pipe in the above statement is the verion of the exploit. You can enter any of the following:
+ The first parameter before the pipe in the above statement is the version of the exploit. You can enter any of the following:
   - CC1 or CollectionCommons1
   - CC2 or CollectionCommons2
   - GV1 or Groovy1
