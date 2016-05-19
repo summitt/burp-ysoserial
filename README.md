@@ -1,5 +1,6 @@
 # burp-ysoserial - with complex command in injection support
 
+Download the jar file here: [ysoserial.jar](https://github.com/summitt/burp-ysoserial/releases)
 
 There are 3 ways to run this extension. 
 
